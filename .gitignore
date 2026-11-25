@@ -1,0 +1,74 @@
+.env
+.venv/
+node_modules/
+dist/
+.angular/
+__pycache__/
+*.pyc
+.gradle/
+local.properties
+*.backup
+
+# Credenciales
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.jks
+*.keystore
+local.properties
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Angular y Android
+node_modules/
+dist/
+.angular/
+.gradle/
+.idea/
+build/
+*.apk
+*.aab
+
+# Datos y archivos confidenciales
+*.xlsx
+*.xls
+*.csv
+*.sql
+*.sqlite3
+*.log
+*.zip
+media/
+uploads/
+database/
+documentacion/
+pruebas/
+
+# Respaldos y parches
+respaldo_*/
+ACTUALIZAR_*
+
+# Archivos temporales
+Thumbs.db
+.DS_Store
+
+
+# Copias de seguridad adicionales
+*.bak
+*.old
+*.backup
+*.tmp
+
+
+# Copias de seguridad adicionales
+*.bak
+*.old
+*.backup
+*.tmp
+

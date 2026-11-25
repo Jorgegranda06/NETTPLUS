@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">NETTPLUS</string>
+    <string name="title_activity_main">NETTPLUS</string>
+    <string name="package_name">ec.edu.utpl.nettplus</string>
+    <string name="custom_url_scheme">ec.edu.utpl.nettplus</string>
+</resources>
