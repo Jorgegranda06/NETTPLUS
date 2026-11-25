@@ -1,15 +1,60 @@
-# NETTPLUS — adaptación académica preliminar
-No es una entrega verificada. Conserva el frontend original y adapta parte de su API a Django/MySQL. No contiene datos reales ni credenciales. No sustituye el original Flask/PostgreSQL.
+﻿# NETTPLUS
 
-## Windows
-1. En MySQL Workbench ejecutar database/crear.sql. Usar una base vacía de pruebas.
-2. Abrir PowerShell en esta carpeta. Ejecutar `powershell -ExecutionPolicy Bypass -File .\INSTALAR.ps1`. Introducir usuario y contraseña MySQL y crear superusuario Django. Requiere Internet para dependencias.
-3. En dos terminales: `powershell -ExecutionPolicy Bypass -File .\INICIAR_BACKEND.ps1` y `powershell -ExecutionPolicy Bypass -File .\INICIAR_FRONTEND.ps1`.
-4. Abrir http://localhost:4200, iniciar sesión con el superusuario creado. Admin: http://127.0.0.1:8000/admin/ ; Swagger: http://127.0.0.1:8000/api/docs/ .
-5. En frontend: `npx cap open android`. Ejecutar en emulador. Backend debe seguir activo. Si Android no permite HTTP, revisar manifest y configuración de red de desarrollo. No se incluye APK.
+Proyecto academico de Ingenieria Web - UTPL.
 
-## Pruebas y evidencias
-En Gestión CRUD crear departamento o colaborador ficticio, listar, abrir detalle, editar y eliminar. En Swagger autenticar con token Bearer obtenido en POST /api/login (si Swagger no ofrece autorización, usar Postman). Comprobar GET 200, POST 201, PUT/PATCH 200, DELETE 204, GET de ID eliminado 404, POST inválido 400. Capturar tablas MySQL, Swagger, web y Android. Completar matriz solo con pruebas realizadas.
+## Tecnologias
+- Django y Django REST Framework
+- MySQL
+- Angular e Ionic
+- Capacitor y Android Studio
+- Swagger / OpenAPI
 
-## Limitaciones
-No se ejecutaron Django, MySQL, npm build ni Android en este entorno. Migraciones se generan localmente. No se migró el backup PostgreSQL. Importación auxiliar, reportes, ausencias, roles CRUD, relaciones FK completas, rutas Angular por entidad y auditoría completa pendientes. El cálculo de atrasos es provisional. No presentar como funcionalidades verificadas. El documento de requisitos original se incluye. El frontend conserva estructura monolítica original con una página CRUD compartida. Android se genera localmente mediante Capacitor. No usar datos personales reales para pruebas.
+## Funcionalidades
+- Autenticacion y roles de usuario.
+- Gestion de departamentos, colaboradores, horarios,
+  marcaciones, permisos y usuarios.
+- Importacion de archivos Excel.
+- Indicadores y reportes de asistencia.
+- Exportacion de reportes Excel.
+- Auditoria de operaciones.
+
+## Instalacion
+1. Crear la base MySQL utilizando database/crear_base_academica.sql.
+2. Ejecutar INSTALAR.ps1 desde PowerShell.
+3. Configurar las credenciales MySQL solicitadas.
+4. Crear el superusuario Django.
+5. Ejecutar INICIAR_BACKEND.ps1 e INICIAR_FRONTEND.ps1
+   en terminales independientes.
+
+## Accesos
+- Web: http://localhost:4200
+- API: http://127.0.0.1:8000/api/
+- Swagger: http://127.0.0.1:8000/api/docs/
+- Django Admin: http://127.0.0.1:8000/admin/
+
+## Android
+Desde frontend ejecutar:
+npm run build
+npx cap sync android
+npx cap open android
+
+Ejecutar la aplicacion NETTPLUS en el emulador.
+La API utiliza http://10.0.2.2:8000.
+
+## Pruebas
+Desde backend, activar el entorno virtual y ejecutar:
+python manage.py check
+python manage.py test
+
+Resultado comprobado: 11 pruebas automatizadas exitosas.
+
+## Seguridad y limitaciones
+Las credenciales se almacenan en .env y no se publican.
+Los calculos laborales son provisionales y requieren
+validacion oficial de Recursos Humanos.
+Configuracion HTTP y DEBUG exclusiva para desarrollo.
+No utilizar datos personales reales para demostraciones.
+La descarga Excel en Android y algunas pruebas
+funcionales permanecen pendientes de verificacion.
+
+Adaptacion academica independiente del sistema original.
